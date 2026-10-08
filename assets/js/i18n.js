@@ -14,7 +14,7 @@ const sckjTranslations = {
     nav_about: 'Sobre Nós',
     nav_services: 'Serviços',
     nav_commerce: 'Comércio Geral',
-    nav_faq: 'Perguntas Frequentes',
+    nav_faq: 'FAQ',
     nav_contact: 'Contactos',
     nav_btn: 'Fale Connosco',
 

@@ -607,19 +607,31 @@ Location:
     font-size: var(--ztc-font-size-font-s14);
   }
 }
-.heading1 h5 span {
+.heading1 h5 > span:first-child {
   height: 32px;
   width: 32px;
   text-align: center;
   line-height: 28px;
   border-radius: 50%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.4s;
   background: #fff;
   margin: 0 6px 0 0;
   position: absolute;
   left: 6px;
-  top: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.heading1 h5 > span:not(:first-child) {
+  display: inline;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  line-height: inherit;
 }
 .heading1 h1 {
   color: var(--ztc-text-text-1);
@@ -689,7 +701,7 @@ Location:
   transition: all 0.4s;
   z-index: -1;
 }
-.heading2 h5 span {
+.heading2 h5 > span:first-child {
   height: 28px;
   width: 28px;
   text-align: center;
@@ -699,6 +711,13 @@ Location:
   background: var(--Main-Color, linear-gradient(90deg, #2E0797 0%, #726EFC 100%));
   border-radius: 50%;
   margin: 0 6px 0 0;
+}
+.heading2 h5 > span:not(:first-child) {
+  display: inline;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
 }
 .heading2 h5 span img {
   filter: brightness(0) invert(1);
@@ -983,19 +1002,31 @@ Location:
     font-size: var(--ztc-font-size-font-s14);
   }
 }
-.heading7 h5 span {
+.heading7 h5 > span:first-child {
   height: 32px;
   width: 32px;
   text-align: center;
   line-height: 28px;
   border-radius: 50%;
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   transition: all 0.4s;
   background: #fff;
   margin: 0 6px 0 0;
   position: absolute;
   left: 6px;
-  top: 6px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.heading7 h5 > span:not(:first-child) {
+  display: inline;
+  position: static;
+  width: auto;
+  height: auto;
+  background: none;
+  border-radius: 0;
+  line-height: inherit;
 }
 .heading7 h1 {
   color: var(--ztc-text-text-1);
@@ -13611,32 +13642,97 @@ Location:
   border-color: #2b78b5;
 }
 
-/* Header button and language selector perfect horizontal alignment */
+/* Header single-line horizontal alignment & menu spacing */
+.vl-header-area .container.headerfix,
+.homepage1-body .vl-transparent-header .container.headerfix {
+  max-width: 1400px !important;
+  width: 96% !important;
+}
+
+.row-bg3 {
+  display: flex !important;
+  align-items: center !important;
+  flex-wrap: nowrap !important;
+  padding: 10px 24px !important;
+}
+
+.row-bg3 .vl-logo {
+  flex-shrink: 0 !important;
+}
+
+.row-bg3 .vl-main-menu {
+  width: 100% !important;
+}
+
+.row-bg3 .vl-main-menu ul,
+.homepage1-body .vl-main-menu ul {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-wrap: nowrap !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  white-space: nowrap !important;
+  gap: 2px !important;
+}
+
+.row-bg3 .vl-main-menu ul > li,
+.homepage1-body .vl-main-menu ul > li {
+  display: inline-flex !important;
+  align-items: center !important;
+  white-space: nowrap !important;
+  flex-shrink: 0 !important;
+  margin: 0 !important;
+}
+
+.row-bg3 .vl-main-menu ul > li > a,
+.homepage1-body .vl-main-menu ul > li > a {
+  font-size: 15px !important;
+  padding: 8px 12px !important;
+  white-space: nowrap !important;
+  font-weight: 500 !important;
+  letter-spacing: -0.2px !important;
+  display: inline-block !important;
+  transition: all 0.2s ease !important;
+}
+
+@media (min-width: 992px) and (max-width: 1240px) {
+  .row-bg3 .vl-main-menu ul > li > a,
+  .homepage1-body .vl-main-menu ul > li > a {
+    font-size: 13.5px !important;
+    padding: 6px 7px !important;
+  }
+}
+
 .row-bg3 .vl-hero-btn {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-end !important;
-  gap: 12px !important;
+  gap: 10px !important;
   flex-wrap: nowrap !important;
+  flex-shrink: 0 !important;
 }
 
 .row-bg3 .vl-btn-wrap {
   display: inline-flex !important;
   align-items: center !important;
+  flex-shrink: 0 !important;
 }
 
 .row-bg3 .vl-btn1,
 .row-bg3 a.vl-btn1 {
-  padding: 10px 18px !important;
-  font-size: 15px !important;
+  padding: 9px 16px !important;
+  font-size: 14.5px !important;
   font-weight: 600 !important;
   line-height: 20px !important;
   border-radius: 8px !important;
   white-space: nowrap !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 8px !important;
+  gap: 6px !important;
   margin: 0 !important;
+  flex-shrink: 0 !important;
 }
 
 .row-bg3 .vl-lang-dropdown {
@@ -13646,14 +13742,15 @@ Location:
 }
 
 .row-bg3 .vl-lang-btn {
-  height: 40px !important;
-  padding: 0 12px !important;
-  font-size: 14px !important;
+  height: 38px !important;
+  padding: 0 10px !important;
+  font-size: 13.5px !important;
   display: inline-flex !important;
   align-items: center !important;
-  gap: 6px !important;
+  gap: 5px !important;
   white-space: nowrap !important;
   border-radius: 8px !important;
+  flex-shrink: 0 !important;
 }
 
 /* Clean Centered Hero Section (Clean Layout - SCKJ) */
@@ -13765,4 +13862,185 @@ Location:
   display: block;
   line-height: 1.3;
 }
+
+/* Completely remove robot hands and spinning globes */
+.elements1,
+.elements7,
+.elements44,
+.keyframe5,
+.keyframe6 {
+  display: none !important;
+  opacity: 0 !important;
+  visibility: hidden !important;
+  animation: none !important;
+  pointer-events: none !important;
+}
+
+/* ========================================================
+   GLOBAL FIX: BADGE PILLS & HEADING OVERLAPS
+   Prevents text from crushing into 32px or overlapping titles
+   ======================================================== */
+.heading1 h5,
+.heading2 h5,
+.heading7 h5 {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  position: relative !important;
+  width: auto !important;
+  height: auto !important;
+  max-width: 100% !important;
+  gap: 10px !important;
+  text-transform: uppercase !important;
+  margin-bottom: 18px !important;
+}
+
+/* Hero Badge Pill */
+.heading1 h5,
+.heading7 h5 {
+  border-radius: 30px !important;
+  background: rgba(255, 255, 255, 0.12) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  padding: 8px 22px 8px 10px !important;
+  color: #ffffff !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  border: 1px solid rgba(255, 255, 255, 0.18) !important;
+}
+
+.heading1 h5 > span:first-child,
+.heading7 h5 > span:first-child {
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  width: 28px !important;
+  height: 28px !important;
+  min-width: 28px !important;
+  border-radius: 50% !important;
+  background: #ffffff !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.heading1 h5 > span:first-child img,
+.heading7 h5 > span:first-child img {
+  width: 14px !important;
+  height: 14px !important;
+  object-fit: contain !important;
+}
+
+.heading1 h5 > span:not(:first-child),
+.heading1 h5 span[data-i18n],
+.heading7 h5 > span:not(:first-child),
+.heading7 h5 span[data-i18n] {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  -webkit-text-fill-color: #ffffff !important;
+  display: inline-block !important;
+  line-height: normal !important;
+  white-space: nowrap !important;
+  font-size: 14px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Light Section Pill Badges */
+.heading2 h5 {
+  border-radius: 30px !important;
+  background: rgba(26, 95, 151, 0.08) !important;
+  padding: 6px 18px 6px 8px !important;
+  border: 1px solid rgba(26, 95, 151, 0.15) !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+  color: #1A5F97 !important;
+  -webkit-text-fill-color: #1A5F97 !important;
+}
+
+.heading2 h5::after {
+  display: none !important;
+}
+
+.heading2 h5 > span:first-child {
+  position: static !important;
+  transform: none !important;
+  top: auto !important;
+  left: auto !important;
+  width: 26px !important;
+  height: 26px !important;
+  min-width: 26px !important;
+  border-radius: 50% !important;
+  background: linear-gradient(135deg, #1A5F97 0%, #C8102E 100%) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 !important;
+  flex-shrink: 0 !important;
+}
+
+.heading2 h5 > span:first-child img {
+  width: 13px !important;
+  height: 13px !important;
+  filter: brightness(0) invert(1) !important;
+}
+
+.heading2 h5 > span:not(:first-child),
+.heading2 h5 span[data-i18n] {
+  position: static !important;
+  top: auto !important;
+  left: auto !important;
+  transform: none !important;
+  width: auto !important;
+  height: auto !important;
+  background: none !important;
+  border-radius: 0 !important;
+  color: #1A5F97 !important;
+  -webkit-text-fill-color: #1A5F97 !important;
+  display: inline-block !important;
+  line-height: normal !important;
+  white-space: nowrap !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  letter-spacing: 0.5px !important;
+}
+
+/* Ensure Titles have clear spacing and never overlap */
+.hero1-header h1 {
+  margin-top: 8px !important;
+  line-height: 1.25 !important;
+}
+
+@media (max-width: 767px) {
+  .heading1 h5,
+  .heading2 h5,
+  .heading7 h5 {
+    white-space: normal !important;
+    text-align: center !important;
+    font-size: 12.5px !important;
+    padding: 6px 14px 6px 8px !important;
+  }
+  .heading1 h5 > span:not(:first-child),
+  .heading1 h5 span[data-i18n],
+  .heading2 h5 > span:not(:first-child),
+  .heading2 h5 span[data-i18n],
+  .heading7 h5 > span:not(:first-child),
+  .heading7 h5 span[data-i18n] {
+    white-space: normal !important;
+    font-size: 12.5px !important;
+  }
+}
+
 
